@@ -17,14 +17,14 @@ class Utility {
         switch (check_option) {
             case this.SNAKE:
                 console.log('SNAKE');
-                if (this.current_position - dice >= this.STARTING_POSITION) {
+                if (this.current_position - dice >= this.Start_Place) {
                     this.current_position = this.current_position - dice;
                 }
                 break;
 
             case this.LADDER:
                 console.log(' LADDER ');
-                if (this.current_position + dice <= this.ENDING_POSITION) {
+                if (this.current_position + dice <= this.End_place) {
                     this.current_position = this.current_position + dice;
                 }
                 break;
@@ -33,6 +33,8 @@ class Utility {
                 console.log('NO PLAY');
                 this.current_position = this.current_position;
                 break;
+
+                
         }
         console.log(`Current position :${this.current_position}`);
     }
