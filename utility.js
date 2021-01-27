@@ -1,5 +1,5 @@
 class Utility {
-     Start_Place = 0;
+    Start_Place = 0;
     End_place = 100;
     SNAKE = 1;
     LADDER = 2;
