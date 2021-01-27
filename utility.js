@@ -8,10 +8,10 @@ class Utility {
     NO_PLAY = 0;
     current_position = 0;
 
-    rollDice = () => {
-        let dice_count = 0;
-        this.current_position = this.Start_Place;
-        while (this.current_position < this.End_place) {
+    rollDice = (current_position) => {
+        // let dice_count = 0;
+        // this.current_position = this.Start_Place;
+        if (this.current_position < this.End_place) {
 
 
 
@@ -42,12 +42,42 @@ class Utility {
 
 
             }
-            dice_count++;
+            this.dice_count++;
         }
         console.log(`Current position :${this.current_position}`);
-        console.log('Dice count is :'+dice_count);
+        return current_position;
+    }
+
+    twoPlayers = () => {
+
+        let firstPlayer_Place = 0
+        let secondPlayer_Place = this.Start_Place;
+        this.dice_count = this.Start_Place;
+        while (firstPlayer_Place < this.End_place && secondPlayer_Place < this.End_place) {
+            console.log("********************************************************************************");
+
+            console.log('First Player Turn: >>>>>>  ');
+            firstPlayer_Place = this.rollDice(firstPlayer_Place);
+
+            if (this.current_position == this.End_place) {
+
+                console.log("!!!First Player WON The Game!!!");
+
+                break;
+            }
+            console.log("********************************************************************************");
+            console.log('Second Player Turn: >>>>>>  ');
+            secondPlayer_Place = this.rollDice(secondPlayer_Place);
+
+            if (this.current_position == this.End_place) {
+
+                console.log("!!!Second Player WON The Game!!!");
+                break;
+            }
+        }
 
     }
+
 
 
 }
