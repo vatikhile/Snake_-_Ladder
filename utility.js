@@ -1,7 +1,5 @@
 class Utility {
-
-
-    Start_Place = 0;
+     Start_Place = 0;
     End_place = 100;
     SNAKE = 1;
     LADDER = 2;
@@ -9,13 +7,7 @@ class Utility {
     current_position = 0;
 
     rollDice = (current_position) => {
-        // let dice_count = 0;
-        // this.current_position = this.Start_Place;
         if (this.current_position < this.End_place) {
-
-
-
-
             var dice = Math.floor(Math.random() * 6) + 1;
             console.log('Random check dice : ' + dice);
             let check_option = Math.floor(Math.random() * 3) + 1;
